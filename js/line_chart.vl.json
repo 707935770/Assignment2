@@ -1,0 +1,14 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url":"https://raw.githubusercontent.com/707935770/Fit3179/main/Homework%20week10/Data/ORDER.csv"},
+  "mark": "rect",
+  "encoding": {
+    "y": {"field": "Country", "type": "nominal"},
+    "x": {"field": "GDP", "type": "nominal"},
+    "color": {"aggregate": "mean", "field": "Population"}
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}

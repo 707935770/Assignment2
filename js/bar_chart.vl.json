@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+        "url":"https://raw.githubusercontent.com/707935770/Fit3179/main/Homework%20week10/Data/ORDER.csv"
+      },
+  "transform": [
+    {
+      "window": [{
+        "op": "rank",
+        "as": "rank"
+      }],
+      "sort": [{ "field": "CPI", "order": "descending" }]
+    }, {
+      "filter": "datum.rank <= 5"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+        "field": "Population",
+        "type": "quantitative"
+    },
+    "x": {
+        "field": "Country",
+        "type": "nominal"
+    }
+  }
+}
