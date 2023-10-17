@@ -1,11 +1,11 @@
-Country,Co2
-China,9893038
-United States of America,5006302
-India,2407672
-Russia,1732027
-Japan,1135886
-Germany,727973
-Iran,661710
-South Korea,620302
-Saudi Arabia,563449
-Indonesia,563325
+Country,Co2,percentage
+China,9893038,0.424381096
+United States of America,5006302,0.214755056
+India,2407672,0.103281771
+Russia,1732027,0.074298665
+Japan,1135886,0.048726038
+Germany,727973,0.031227817
+Iran,661710,0.028385337
+South Korea,620302,0.02660906
+Saudi Arabia,563449,0.02417024
+Indonesia,563325,0.024164921
