@@ -1,11 +1,11 @@
-Country,GDP,Life expectancy
-United States of America,2.14E+13,78.5
-China,1.99E+13,77
-Japan,5.08E+12,84.2
-Germany,3.85E+12,80.9
-United Kingdom,2.83E+12,81.3
-France,2.72E+12,82.5
-India,2.61E+12,69.4
-South Korea,2.03E+12,82.6
-Italy,2.00E+12,82.9
-Brazil,1.84E+12,75.7
+Country,GDP,Life expectancy,Co2
+United States of America,2.14E+13,78.5,5006302
+China,1.99E+13,77,9893038
+Japan,5.08E+12,84.2,1135886
+Germany,3.85E+12,80.9,727973
+United Kingdom,2.83E+12,81.3,379025
+France,2.72E+12,82.5,303276
+India,2.61E+12,69.4,2407672
+South Korea,2.03E+12,82.6,620302
+Italy,2.00E+12,82.9,320411
+Brazil,1.84E+12,75.7,462299
