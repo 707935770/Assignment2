@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "https://raw.githubusercontent.com/707935770/Assignment2/main/Data/AREA_CO2_updated.csv"},
+  "hconcat": [{
+    "width": 280,
+    "height": 200,
+    "title": "Area",
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Country", "axis": null, "type": "nominal"
+      },
+      "x": {
+        "aggregate": "sum", "field": "Area",
+        "title": "Area",
+        "axis": {"format": "s"},
+        "sort":"descending"
+      },
+      "color": {
+        "field": "Area",
+        "scale": {"range": ["#675193"]},
+        "legend": null
+      }
+    }
+  }, {
+    "width": 20,
+    "view": {"stroke": null},
+    "mark": {
+      "type": "text",
+      "align": "center"
+    },
+    "encoding": {
+      "y": {"field": "Country", "type": "nominal", "axis": null},
+      "text": {"field": "Country", "type": "nominal"}
+    }
+  }, {
+    "width": 280,
+    "height": 200,
+    "title": "Co2",
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Country", "title": null,
+        "axis": null
+      },
+      "x": {
+        "aggregate": "sum", "field": "Co2",
+        "title": "CO2 EMISSION",
+        "axis": {"format": "s"}
+      }
+    }
+  }],
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false},
+    "background": "#ddeefa"
+  }
+}

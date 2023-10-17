@@ -1,123 +1,144 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Co2-Emission Worldwide</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <title>Worldwide CO2 Emission</title>
 
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 </head>
-
 <body>
-
-  <div class="page">
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1>CO2 EMISSION WROLDWIDE</h1>
-        <p>Map to show that <span style="color: #FC6600">CO2-Emission</span> Worldwide</p>
-      </div>
-    </div>
-    <!-- end pure grid group -->
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="description description-left">
-          <h2>Introduction</h2>
-          <p>As the global community becomes increasingly aware of the pressing challenges posed by climate change,
-             the need for transparent, accurate, and accessible data on carbon dioxide (CO2) emissions has never been more paramount.
-              CO2 is one of the primary greenhouse gases responsible for the warming of our planet,
-               and its concentration in our atmosphere is rising at an unprecedented rate.
-                To make informed decisions about sustainability and environmental policy,
-                 it's essential to understand where these emissions come from and how they fluctuate over time. </p>
+    <div class="page">
+        <!-- pure grid group -->
+        <div class="pure-g" id="banner">
+        <div class="pure-u-1-1">
+            <h1>CO2-Emission worldwide, Visualized (2022)</h1>
+            <div>
+                <p>The relationship between<span style="color: #FC6600">CO2-Emission</span> and others factors</p>
+            </div>
         </div>
-        <h2>choropleth Map</h2>
-          <p>The CO2 Emission World Map is more than just a visual tool; it's a call to action. By laying bare the stark
-             contrasts in emission levels between developed and developing nations,
-            or highlighting regions that have successfully reduced their carbon footprint,
-             the map serves as both an educational resource and a policy guide.
-            For policymakers, it offers a comparative perspective,
-             showcasing which strategies are effective and where intervention is needed the most. For the general public, 
-            it's a constant reminder of the collective responsibility we bear towards curbing global warming.</p>
-        <div id="vis1" class="vis-container"></div>
-      </div>
-    </div>
-    <!-- end pure grid group -->
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="description description-left">
-          <h2>Line Graph</h2>
-          <p>The bar chart presents a clear comparison of the population sizes of the world's top five most populous countries. 
-            Each country is represented by a distinct bar, with the height of the bar corresponding to the country's total population.</p>
         </div>
-        <div id="vis2" class="vis-container"></div>
+        <!-- end pure grid group -->
 
-    </div>
-    <!-- end pure grid group -->
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="map_frame">
+                    <div class="description-left">
+                        <h2>The accumulation of <span class="co2_text">CO2-Emission</span> and <span class="gdp_text">GDP</span> Around the World</h2>
+                        <p>As we progress through the 21st century, one of the most pressing and contentious environmental issues we face is the worldwide <span class="co2_text">emission of carbon dioxide (CO2)</span>. 
+                          This greenhouse gas is a primary contributor to the global warming phenomenon, 
+                          which is responsible for significant climatic changes and disruptions to various ecosystems around the globe.</p>
+                        <p>The map gives a good overview on which <span class="co2_text">CO2</span> are producted the most by the country. The value of 
+                           <span class="gdp_text">GDP</span> also as a optional attribute to figure out the relationship between them.</p>
+                    </div>
+                    <div id="map"></div>
+                    </div>
+            </div>
+            </div>
+            <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="description description-left">
-          <h2>Heat Graph</h2>
-          <p>The heat map vividly illustrates the dynamic relationship between population and GDP among some of the 
-            world's most influential countries.
-            The juxtaposition of these five countries on the heat map offers a compelling visual narrative of global power dynamics. 
-            While population size does play a role in economic might, other factors like innovation,
-             infrastructure, and governance also contribute significantly to a country's GDP.</p>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+              <div id="radial_frame">
+                <div class="description-left">
+                    <h2>Percentage of <strong>TOP 10</strong> countries <span class="co2_text">CO2 Emission</span></h2>
+                    <p>
+                      The top 10 <span class="co2_text">CO2 Emission countries</span> globally are significantly influenced by various factors including
+                      <strong>Popluation size, Economic structure, Industrial activities, and Energy sources.</strong> 
+                      <span class="gdp_text">China and the United States</span> in emissions due to extensive industrial sectors and energy consumption from fossil fuels. 
+                      Developing economies like <strong>India and Indonesia</strong> see high emissions corresponding with growth and developmental demands. 
+                      Other countries, such as <strong>Russia and Saudi Arabia</strong>, have high emissions tied to energy-intensive industries and 
+                      domestic energy consumption patterns. Although some, like <strong>Germany</strong>, are actively pursuing renewable energies, 
+                      there remains a substantial dependency on fossil fuels across these major economies.</p>
+                </div>
+                <div id="radial"></div>
+            </div>
+            <div id="scatter_frame">
+                <h2>Correlation Between <span class="gdp_text">GDP</span> and <span class="population_text">Population</span></h2>
+                <p>The<strong>strong relationship</strong> between the value of <span class="gdp_text">GDP</span> and 
+                    the number of <span class="population_text">Population</span>. Clearly, the more <span class="population">Population</span> 
+                    a country has, the more <span class="gdp_text">GDP</span> the country will generate.</p>
+                <p>The <span class="cpi_text">Consumer Price Index (CPI)</span> is an essential economic indicator that measures the average change 
+                  over time in the prices paid by urban consumers for a market basket of consumer goods and services.
+                  The relationship between <span class="gdp_text">GDP</span> and the <span class="cpi_text">CPI</span> nuanced and reflects fundamental aspects of the economic landscape. </p>
+                <div id="small_text">
+                    <p>* You can select the <strong>Continent</strong> to filter the chart</p>
+                </div>
+                <div id="scatter_plot"></div>
+            </div>
+            <div id="bar_chart_area_co2_frame">
+                <h2>Relationship between <span class="co2_text">CO2 Emission</span> and <strong>Country's Area</strong></h2>
+                <p>From the charts, we can see that there is no obvious relationship between value of <span class="co2_text">CO2 Emission</span>
+                   and the <strong>Area</strong> of country.
+                   In my prediction the <strong>Area</strong> of the country's territory leads to an increase in <span class="co2_text">CO2 Emission</span>
+                   , but this prediction is clearly wrong, as the graph shows</p>
+                <div id="bar_chart_area_co2"></div>
+            </div>
+            </div>
+            <div class="pure-u-1-3">
+            <div id="bar_frame">
+                <h2><span class="gdp_text">GDP</span> VS <span class="co2_text">CO2</span> VS<span class="life_text"> Life</span></h2>
+                <p>China and the U.S. have overwhelmingly high CO2 emissions and GDP, which I will mark in red in the table below to make it 
+                  easier to distinguish between them, but not so much in terms of life expectancy. This shows that high GDP tends to produce 
+                  high CO2 emissions, and high CO2 emissions lead to shorter life expectancy.</p>
+                <div id="bar_chart"></div>
+            </div>
+            </div>
         </div>
-        <div id="vis3" class="vis-container"></div>
-      </div>
+        <!-- end pure grid group -->
 
-    </div>
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-2" id="end_credit">
-      <p>This visualisation is created by <a href="https://github.com/707935770/Assignment2" target="_blank">Changheng Li</a></href>.<br>Data sources: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/countries-of-the-world-2023" target="_blank">Kaggle</a></href>.</p>
-      </div>
-    </div>
-  <!-- end pure grid group -->
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1" id="end_credit">
+            <p>This visualisation is created by <a href="https://github.com/707935770/Assignment2" target="_blank">Changheng Li</a></href>.<br>Data sources: <a href="https://www.kaggle.com/datasets/nelgiriyewithana/countries-of-the-world-2023" target="_blank">Kaggle</a></href>.</p>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+    </div> <!-- end page -->
 
-
-  </div> <!-- end page -->
-
-  <script type="text/javascript">
-    var specVis1 = "js/choropleth_map.vl.json";
+<script type="text/javascript">
+    var specVis1 = "js/map.vl.json";
     var specVis2 = "js/bar_chart.vl.json";
-    var specVis3 = "js/line_chart.vl.json"
+    var specVis3 = "js/radial.vl.json";
+    var specVis4 = "js/bar_chart_area_co2.vl.json";
+    var specVis5 = "js/scatter_plot.vl.json";
 
-    vegaEmbed('#vis1', specVis1, { "actions": false });
-
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    vegaEmbed('#map', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
-    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    vegaEmbed('#bar_chart', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 
+    vegaEmbed('#radial', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
 
-  </script>
+    vegaEmbed('#bar_chart_area_co2', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#scatter_plot', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+</script>
 </body>
-
 </html>

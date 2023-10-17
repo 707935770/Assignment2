@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500,
+  "width": 580,
   "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/707935770/Assignment2/main/Data/world-data-2023-updated.csv"

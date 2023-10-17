@@ -1,44 +1,48 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
+  "width": 700,
   "height": 350,
   "data": {
-    "url": "https://raw.githubusercontent.com/nathanwsoe/Assignment-2/main/data/total_vaccinations_by_manufacturer_cleaned.csv"
+    "url": "https://raw.githubusercontent.com/707935770/Assignment2/main/Data/TOP%20CO2.csv"
   },
   "layer": [
     {"mark": {"type": "arc", "innerRadius": 30, "stroke": "white"}},
     {
-      "mark": {"type": "text", "radiusOffset": 40},
-      "encoding": {"text": {"field": "vaccine", "type": "nominal"}}
+      "mark": {
+        "type": "text", 
+        "radiusOffset": 20, 
+        "fontWeight": "bold",
+        "align": "center", 
+        "baseline": "middle", 
+        "limit": 100
+      },
+      "encoding": {
+        "text": {"field": "Country", "type": "nominal"},
+        "theta": {"field": "Co2", "type": "quantitative", "stack": true},
+        "radius": {"field": "Co2", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}},
+        "color": {"field": "percentage", "type": "nominal", "legend": null}
+      }
     }
   ],
   "encoding": {
     "theta": {
-      "field": "total_vaccinations",
+      "field": "Co2",
       "type": "quantitative",
       "stack": true
     },
     "radius": {
-      "field": "total_vaccinations",
+      "field": "Co2",
       "scale": {"type": "sqrt", "zero": true, "rangeMin": 30}
     },
     "color": {
       "field": "percentage", 
       "type": "nominal", 
-      "legend": null,
-      "scale": {
-        "range": [
-          "#377eb8",
-          "#215680",
-          "#ca4a75",
-          "#d37a98"
-        ]
-      }
+      "legend": null
     },
     "tooltip": [
-      {"field": "vaccine", "type": "nominal", "title": "Vaccine"},
-      {"field": "total_vaccinations", "type": "quantitative", "title": "Total vaccinations", "format": ","},
-      {"field": "percentage", "type": "quantitative", "title": "Percentage of total vaccinations of all vaccines", "format":"0.2%"}
+      {"field": "Country", "type": "nominal", "title": "Country"},
+      {"field": "Co2", "type": "quantitative", "title": "Co2 Emission", "format": "s"},
+      {"field": "percentage", "type": "quantitative", "title": "Percentage of total Co2 Emission of all country", "format":"0.2%"}
     ]
   },
   "config": {
@@ -47,6 +51,6 @@
         "stroke": "transparent"
       }
     },
-    "background": "#a0c5e0"
+    "background": "#ddeefa"
   }
 }
