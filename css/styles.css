@@ -39,7 +39,7 @@ h2 {
 }
 
 body {
-    background-image: url('../picture/645bc9a1165831683736993698.jpg'); /* 对于图像背景 */
+    background-image: url('../picture/645bc9a1165831683736993698.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -108,13 +108,20 @@ body {
     padding-bottom: 47.5px;
 }
 
+#text_frame {
+    background-color: #ddeefa;
+    margin-left: 30px;
+    padding: 20px;
+    padding-bottom: 47.5px;
+}
+
 #bar_chart_area_co2_frame{
     background-color: #cfe0f2;
     padding: 20px;
 }
 
 #end_credit {
-    background: url("../media/webpage_banner.jpg") #20445f;
+    background: #20445f;
     background-position: center;
     color: white;
     padding-left: 20px;
