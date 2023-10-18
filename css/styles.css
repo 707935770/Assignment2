@@ -7,7 +7,6 @@ h1 {
     margin-top: 10px;
 }
 h2 {
-    text-align: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
@@ -40,9 +39,13 @@ h2 {
 }
 
 body {
-    background-color: #ddeefa;
+    background-image: url('../picture/645bc9a1165831683736993698.jpg'); /* 对于图像背景 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .page {
+    background-color: #ddeefa;
     width: 1200px;    
     margin: auto;
     padding: 50px;
@@ -66,8 +69,9 @@ body {
 #banner {
     padding: 20px;
     padding-top: 25px;
-    background: url("../media/webpage_banner.jpg") #20445f;
+    background: url("../picture/CCUS-report_1000x500pxl_tcm21-236960.jpg") #20445f;
     background-position: center;
+    background-size: cover;
     color: white;
 }
 #map_frame {
